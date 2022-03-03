@@ -12,6 +12,7 @@ Follow the following steps to get started.
     * `#define DEBUG_VERBOSE`: Detailed debug output that includes *time*, *function signature*, *file*, *line* along with the *input argument*. 
     * `#define DEBUG_SIMPLE`: Minimalistic debug output or *as-it-is* provided. 
 4. Use print statements as `DEBUG_PRINT(str)` or `DEBUG_PRINTLN(str)` to output the debug information. 
+5. Use `DEBUG_FLUSH()` to wait for the transmission of outgoing serial data to complete.
 
 An example is also provided with the library to facilitate the usage. 
 
