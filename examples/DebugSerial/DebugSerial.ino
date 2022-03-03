@@ -8,7 +8,7 @@
   printing simply comment out the define
   statements.
 
-  Copyright (C) 2020 Md Abdullah AL IMRAN
+  Copyright (C) 2022 Md Abdullah AL IMRAN
   <iot dot objx at gmail dot com>
 */
 
@@ -20,7 +20,7 @@
 int counter = 0;
 
 void setup() {
-  Serial.begin(9600); // Must be initialized
+  Serial.begin(115200); // Must be initialized
   Serial.println("Debug Utilities example loaded...");
 }
 

@@ -1,7 +1,7 @@
 
 /*
   DebugUtils.h - Simple debugging utilities.
-  Copyright (C) 2020 Md Abdullah AL IMRAN
+  Copyright (C) 2022 Md Abdullah AL IMRAN
   <iot dot objx at gmail dot com>
 
   _________
@@ -33,14 +33,19 @@
   Serial.print(__LINE__);     \
   Serial.print(' ');      \
   Serial.println(str);
+#define DEBUG_FLUSH() \
+  Serial.flush();
 #elif defined(DEBUG_SIMPLE)
 #define DEBUG_PRINT(str) \
   Serial.print(str);
 #define DEBUG_PRINTLN(str) \
   Serial.println(str);
+#define DEBUG_FLUSH() \
+  Serial.flush();
 #else
 #define DEBUG_PRINT(str) {}
 #define DEBUG_PRINTLN(str) {}
+#define DEBUG_FLUSH() {}
 #endif
 
 #endif
