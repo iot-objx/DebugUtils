@@ -20,28 +20,32 @@
 #ifndef DEBUGUTILS_H
 #define DEBUGUTILS_H
 
-//#include <Arduino.h>
+#include <Arduino.h>
+
+#ifndef DEBUG_PORT
+#define DEBUG_PORT Serial
+#endif
 
 #ifdef DEBUG_VERBOSE
 #define DEBUG_PRINTLN(str)    \
-  Serial.print(millis());     \
-  Serial.print(": ");    \
-  Serial.print(__PRETTY_FUNCTION__); \
-  Serial.print(' ');      \
-  Serial.print(__FILE__);     \
-  Serial.print(':');      \
-  Serial.print(__LINE__);     \
-  Serial.print(' ');      \
-  Serial.println(str);
+  DEBUG_PORT.print(millis());     \
+  DEBUG_PORT.print(": ");    \
+  DEBUG_PORT.print(__PRETTY_FUNCTION__); \
+  DEBUG_PORT.print(' ');      \
+  DEBUG_PORT.print(__FILE__);     \
+  DEBUG_PORT.print(':');      \
+  DEBUG_PORT.print(__LINE__);     \
+  DEBUG_PORT.print(' ');      \
+  DEBUG_PORT.println(str);
 #define DEBUG_FLUSH() \
-  Serial.flush();
+  DEBUG_PORT.flush();
 #elif defined(DEBUG_SIMPLE)
 #define DEBUG_PRINT(str) \
-  Serial.print(str);
+  DEBUG_PORT.print(str);
 #define DEBUG_PRINTLN(str) \
-  Serial.println(str);
+  DEBUG_PORT.println(str);
 #define DEBUG_FLUSH() \
-  Serial.flush();
+  DEBUG_PORT.flush();
 #else
 #define DEBUG_PRINT(str) {}
 #define DEBUG_PRINTLN(str) {}

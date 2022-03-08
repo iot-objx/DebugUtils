@@ -12,16 +12,19 @@
   <iot dot objx at gmail dot com>
 */
 
-
+// #define DEBUG_PORT Serial // Select a Debug port e.g. Serial [default], Serial1, Serial2, Serial3.
 #define DEBUG_VERBOSE // Detailed debug print
 //#define DEBUG_SIMPLE  // Simple debug print
+
 #include <DebugUtils.h>
 
 int counter = 0;
 
 void setup() {
-  Serial.begin(115200); // Must be initialized
-  Serial.println("Debug Utilities example loaded...");
+  DEBUG_PORT.begin(115200); // Must be initialized
+  DEBUG_PRINTLN("Debug Utilities example loaded...");
+  delay(100);
+  DEBUG_FLUSH();
 }
 
 void loop() {

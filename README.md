@@ -6,11 +6,12 @@ The motivation of the librray was acquired from [here](http://www.arduino.cc/cgi
 ## How-To
 Follow the following steps to get started.
 
-1. First download this library and put it under the libraries directory. 
+1. First download this library and put it under the libraries directory. Or make sure Arduino searches for the library under the folder of your choice. 
 2. Include the libary to your project using `#include <DebugUtils.h>`.
 3. Depending on your need, define one of the followings just before the library include as stated on step 2.
     * `#define DEBUG_VERBOSE`: Detailed debug output that includes *time*, *function signature*, *file*, *line* along with the *input argument*. 
     * `#define DEBUG_SIMPLE`: Minimalistic debug output or *as-it-is* provided. 
+    * `#define DEBUG_PORT Serial`: (**OPTIONAL**) Choose the Debug Port. Only Arduino Mega and Due boards have more than one Serials available. `Serial` is defined by default unless one is provided. 
 4. Use print statements as `DEBUG_PRINT(str)` or `DEBUG_PRINTLN(str)` to output the debug information. 
 5. Use `DEBUG_FLUSH()` to wait for the transmission of outgoing serial data to complete.
 
